@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*!\n' +
-            ' * HTMLMinifier v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
+            ' * HTMLLint v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * Copyright 2010-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
             ' * Licensed under the <%= pkg.license %> license\n' +
             ' */\n',
@@ -17,12 +17,11 @@ module.exports = function(grunt) {
         options: {
           banner: '<%= banner %>',
           require: [
-            './src/htmllint.js:html-minifier/src/htmllint',
-            './src/htmlminifier.js:html-minifier'
+            './src/htmllint.js:html-minifier-lint'
           ]
         },
-        src: 'src/htmlminifier.js',
-        dest: 'dist/htmlminifier.js'
+        src: 'src/htmllint.js',
+        dest: 'dist/htmllint.js'
       }
     },
 
@@ -31,22 +30,18 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       src: {
-        src: ['cli.js', 'src/**/*.js']
+        src: 'src/**/*.js'
       },
       tests: {
         src: ['tests/*.js', 'test.js']
       },
       web: {
         src: 'assets/master.js'
-      },
-      other: {
-        src: ['backtest.js', 'benchmark.js']
       }
     },
 
     qunit: {
-      htmllint: ['./tests/lint', 'tests/lint-tests.html'],
-      htmlminifier: ['./tests/minifier', 'tests/index.html']
+      htmllint: ['./tests/lint', 'tests/index.html']
     },
 
     replace: {
@@ -55,10 +50,6 @@ module.exports = function(grunt) {
         '$1(v<%= pkg.version %>)$2'
       ],
       './tests/index.html': [
-        /("[^"]+\/qunit-)[0-9\.]+?(\.(?:css|js)")/g,
-        '$1<%= pkg.devDependencies.qunitjs %>$2'
-      ],
-      './tests/lint-tests.html': [
         /("[^"]+\/qunit-)[0-9\.]+?(\.(?:css|js)")/g,
         '$1<%= pkg.devDependencies.qunitjs %>$2'
       ]
@@ -74,7 +65,7 @@ module.exports = function(grunt) {
       },
       minify: {
         files: {
-          'dist/htmlminifier.min.js': '<%= browserify.src.dest %>'
+          'dist/htmllint.min.js': '<%= browserify.src.dest %>'
         }
       }
     }
