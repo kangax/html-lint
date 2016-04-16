@@ -6,7 +6,7 @@
 [![devDependency Status](https://img.shields.io/david/dev/kangax/html-lint.svg)](https://david-dm.org/kangax/html-lint#info=devDependencies)
 [![Gitter](https://img.shields.io/gitter/room/kangax/html-minifier.svg)](https://gitter.im/kangax/html-minifier)
 
-[HTMLLint](http://kangax.github.io/html-lint/) is a JavaScript-based HTML Linter based on [HTMLMinifier](http://kangax.github.io/html-minifier/).
+[HTMLLint](http://kangax.github.io/html-lint/) is a JavaScript-based HTML Linter based on [HTMLMinifier](https://github.com/kangax/html-minifier).
 
 [Test suite is available online](http://kangax.github.io/html-lint/tests/).
 
