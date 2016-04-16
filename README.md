@@ -4,8 +4,7 @@
 [![Build Status](https://img.shields.io/travis/kangax/html-lint.svg)](https://travis-ci.org/kangax/html-lint)
 [![Dependency Status](https://img.shields.io/david/kangax/html-lint.svg)](https://david-dm.org/kangax/html-lint)
 [![devDependency Status](https://img.shields.io/david/dev/kangax/html-lint.svg)](https://david-dm.org/kangax/html-lint#info=devDependencies)
-[![optionalDependency Status](https://img.shields.io/david/optional/kangax/html-lint.svg)](https://david-dm.org/kangax/html-lint#info=optionalDependencies)
-[![Gitter](https://img.shields.io/gitter/room/kangax/html-lint.svg)](https://gitter.im/kangax/html-lint)
+[![Gitter](https://img.shields.io/gitter/room/kangax/html-minifier.svg)](https://gitter.im/kangax/html-minifier)
 
 [HTMLLint](http://kangax.github.io/html-lint/) is a JavaScript-based HTML Linter based on [HTMLMinifier](http://kangax.github.io/html-minifier/).
 
