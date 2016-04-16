@@ -27,7 +27,6 @@ function hook() {
 
 if (typeof phantom === 'undefined') {
   load('./src/htmllint');
-  load('./src/htmlminifier');
   hook();
   require(process.argv[2]);
   QUnit.load();

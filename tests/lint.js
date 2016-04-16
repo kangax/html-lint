@@ -1,15 +1,15 @@
- /* global minify, HTMLLint */
+ /* global lint, HTMLLint */
 'use strict';
 
-if (typeof minify === 'undefined') {
-  self.minify = require('html-minifier').minify;
+if (typeof lint === 'undefined') {
+  self.lint = require('html-minifier-lint').lint;
 }
 if (typeof HTMLLint === 'undefined') {
-  self.HTMLLint = require('html-minifier/src/htmllint').HTMLLint;
+  self.HTMLLint = require('html-minifier-lint').HTMLLint;
 }
 
 test('lint exists', function() {
-  ok(minify);
+  ok(lint);
   ok(HTMLLint);
 });
 
@@ -27,13 +27,9 @@ test('lint API', function() {
   equal('function', typeof lint.testAttribute, '`testAttribute` method exists');
 });
 
-function process(input, options) {
-  options = options || {};
-  var lint = new HTMLLint();
-  options.lint = lint;
-  minify(input, options);
+function process(input) {
   var element = {};
-  lint.populate(element);
+  lint(input, element);
   return element.innerHTML || '';
 }
 
@@ -83,14 +79,6 @@ test('repeating attribute', function() {
 
 test('duplicate errors', function() {
   var log = process('<font>foo</font>');
-  match(log, 'DOCTYPE', 1);
-  match(log, 'font', 1);
-  match(log, 'deprecated-element', 1);
-  log = process('<font>foo</font>', { sortAttributes: true });
-  match(log, 'DOCTYPE', 1);
-  match(log, 'font', 1);
-  match(log, 'deprecated-element', 1);
-  log = process('<font>foo</font>', { sortClassName: true });
   match(log, 'DOCTYPE', 1);
   match(log, 'font', 1);
   match(log, 'deprecated-element', 1);

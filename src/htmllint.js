@@ -8,6 +8,8 @@
 
 'use strict';
 
+var HTMLParser = require('html-minifier/src/htmlparser').HTMLParser;
+
 function isPresentationalElement(tag) {
   return /^(?:big|small|hr|blink|marquee)$/.test(tag);
 }
@@ -170,8 +172,29 @@ Lint.prototype.populate = function(writeToElement) {
   }
   else if (this.log.length) {
     output = this.log.join('\n - ').replace(/<[^>]+>/g, '');
-    console.log(' - ' + output.replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+    return ' - ' + output.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
   }
 };
 
 exports.HTMLLint = Lint;
+exports.lint = function(value, writeToElement) {
+  var lint = new Lint();
+  new HTMLParser(value, {
+    html5: true,
+    start: function(tag, attrs) {
+      tag = tag.toLowerCase();
+      lint.testElement(tag);
+      for (var i = 0, len = attrs.length; i < len; i++) {
+        var attr = attrs[i];
+        lint.testAttribute(tag, attr.name.toLowerCase(), attr.value);
+      }
+    },
+    chars: function(text) {
+      lint.testChars(text);
+    },
+    doctype: function(doctype) {
+      lint.testDoctype(doctype);
+    }
+  });
+  return lint.populate(writeToElement);
+};
