@@ -1,15 +1,18 @@
 {
   "name": "html-minifier-lint",
   "description": "HTML Linter based on HTMLMinifier.",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "keywords": [
     "html",
     "lint",
-    "validate"
+    "linter",
+    "validate",
+    "validator"
   ],
   "homepage": "http://kangax.github.io/html-lint/",
   "author": "Juriy \"kangax\" Zaytsev",
   "maintainers": [
+    "Alex Lam <alexlamsl@gmail.com>",
     "Juriy Zaytsev <kangax@gmail.com> (http://perfectionkills.com)"
   ],
   "contributors": [
@@ -34,7 +37,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "html-minifier": "1.5.x"
+    "html-minifier": "2.x"
   },
   "devDependencies": {
     "grunt": "1.0.x",
