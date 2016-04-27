@@ -3,6 +3,9 @@
   "description": "HTML Linter based on HTMLMinifier.",
   "version": "1.0.0",
   "keywords": [
+    "check",
+    "checker",
+    "cli",
     "html",
     "lint",
     "linter",
@@ -21,6 +24,9 @@
     "Zoltan Frombach <tssajo@gmail.com>"
   ],
   "license": "MIT",
+  "bin": {
+    "html-minifier-lint": "./cli.js"
+  },
   "main": "src/htmllint.js",
   "repository": {
     "type": "git",
@@ -48,7 +54,7 @@
     "qunitjs": "1.x"
   },
   "files": [
-    "src",
-    "LICENSE"
+    "src/*.js",
+    "cli.js"
   ]
 }
