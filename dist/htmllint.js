@@ -1,5 +1,5 @@
 /*!
- * HTMLLint v1.0.0 (http://kangax.github.io/html-lint/)
+ * HTMLLint v1.1.0 (http://kangax.github.io/html-lint/)
  * Copyright 2010-2016 Juriy "kangax" Zaytsev
  * Licensed under the MIT license
  */
