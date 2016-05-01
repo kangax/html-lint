@@ -28,6 +28,8 @@ npm link .
 
 ## Usage
 
+For command line usage please see `html-minifier-lint --help`
+
 ### Node.js
 
 ```js
