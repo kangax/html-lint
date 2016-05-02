@@ -3,7 +3,8 @@
 'use strict';
 
 var fs = require('fs');
-var lint = require('.').lint;
+var info = require('./package.json');
+var lint = require('./' + info.main).lint;
 
 function createReadStream(path) {
   if (path) {
