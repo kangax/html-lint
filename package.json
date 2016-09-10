@@ -1,7 +1,7 @@
 {
   "name": "html-minifier-lint",
   "description": "HTML Linter based on HTMLMinifier.",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "keywords": [
     "check",
     "checker",
@@ -43,15 +43,15 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "html-minifier": "2.x"
+    "html-minifier": "3.x"
   },
   "devDependencies": {
     "grunt": "1.0.x",
     "grunt-browserify": "5.0.x",
-    "grunt-contrib-uglify": "1.0.x",
-    "grunt-eslint": "18.1.x",
+    "grunt-contrib-uglify": "2.0.x",
+    "grunt-eslint": "19.0.x",
     "phantomjs-prebuilt": "2.1.x",
-    "qunitjs": "1.x"
+    "qunitjs": "2.x"
   },
   "files": [
     "src/*.js",
